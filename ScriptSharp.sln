@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptSharp.ScriptEditor", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptSharp.Repl", "src\Repl\ScriptSharp.Repl.csproj", "{E9C92903-8168-43E7-82E5-3ED2B614A9D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +29,15 @@ Global
 		{E9C92903-8168-43E7-82E5-3ED2B614A9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9C92903-8168-43E7-82E5-3ED2B614A9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9C92903-8168-43E7-82E5-3ED2B614A9D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8AF88DC-5E76-4B50-A444-1563A386F1BB}
 	EndGlobalSection
 EndGlobal
