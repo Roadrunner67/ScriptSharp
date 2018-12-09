@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptSharp.ScriptEngine", "src\ScriptEngine\ScriptSharp.ScriptEngine.csproj", "{2AC60740-DB95-40CD-A4FE-A46C35098C4C}"
 EndProject
@@ -10,6 +10,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptSharp.Repl", "src\Repl\ScriptSharp.Repl.csproj", "{E9C92903-8168-43E7-82E5-3ED2B614A9D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScriptEditor", "WpfScriptEditor\WpfScriptEditor.csproj", "{1621AA6B-BD40-4328-84E9-A99AE5CD4401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpConsole", "CSharpConsole\CSharpConsole.csproj", "{48E5CD67-4A78-4AB5-9728-DC3E086FC1F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScripting", "WpfScripting\WpfScripting.csproj", "{D21698B3-F749-4785-877A-5E1812F516C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{05A74AAC-9082-48B4-9B0E-38960B9EE70A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeEnvironment", "CodeEnvironment\CodeEnvironment.csproj", "{2527C247-A35F-4F4E-AFAB-68F575717A91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +43,26 @@ Global
 		{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D5DD4F-ED58-488E-9C2D-BD0F78F33B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1621AA6B-BD40-4328-84E9-A99AE5CD4401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1621AA6B-BD40-4328-84E9-A99AE5CD4401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1621AA6B-BD40-4328-84E9-A99AE5CD4401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1621AA6B-BD40-4328-84E9-A99AE5CD4401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E5CD67-4A78-4AB5-9728-DC3E086FC1F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E5CD67-4A78-4AB5-9728-DC3E086FC1F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E5CD67-4A78-4AB5-9728-DC3E086FC1F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E5CD67-4A78-4AB5-9728-DC3E086FC1F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D21698B3-F749-4785-877A-5E1812F516C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D21698B3-F749-4785-877A-5E1812F516C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21698B3-F749-4785-877A-5E1812F516C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D21698B3-F749-4785-877A-5E1812F516C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05A74AAC-9082-48B4-9B0E-38960B9EE70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05A74AAC-9082-48B4-9B0E-38960B9EE70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05A74AAC-9082-48B4-9B0E-38960B9EE70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05A74AAC-9082-48B4-9B0E-38960B9EE70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2527C247-A35F-4F4E-AFAB-68F575717A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2527C247-A35F-4F4E-AFAB-68F575717A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2527C247-A35F-4F4E-AFAB-68F575717A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2527C247-A35F-4F4E-AFAB-68F575717A91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -28,7 +28,8 @@ namespace ScriptSharp.ScriptEngine
         public static object Execute(string code)
         {
             Global global = new Global { X = 3, ReadVal = MyReader };
-            scriptState = scriptState == null ? CSharpScript.RunAsync(code: code, globals: global).Result : scriptState.ContinueWithAsync(code: code).Result;
+            ScriptOptions scriptOptions = ScriptOptions.Default.WithImports("System", "System.Collections.Generic");
+            scriptState = scriptState == null ? CSharpScript.RunAsync(code: code, options: scriptOptions, globals: global).Result : scriptState.ContinueWithAsync(code: code).Result;
             if (scriptState.ReturnValue != null && !string.IsNullOrEmpty(scriptState.ReturnValue.ToString()))
                 return scriptState.ReturnValue;
             return null;

@@ -1,0 +1,115 @@
+﻿<Window x:Class="WpfScriptEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    	xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared" 
+	    xmlns:editor="http://schemas.actiprosoftware.com/winfx/xaml/syntaxeditor"
+        xmlns:local="clr-namespace:WpfScriptEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Unloaded="Window_Unloaded">
+    <DockPanel Margin="10,10,0,0">
+        <shared:PixelSnapper DockPanel.Dock="Top">
+            <TextBlock Text="SyntaxEditor fully supports the editing of code fragments with languages that have parsers used to support IntelliPrompt, such as the .NET Languages Add-on's C# language (sold separately), demoed here." TextWrapping="Wrap" />
+        </shared:PixelSnapper>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2.3*" />
+                <RowDefinition Height="0.8*" />
+                <RowDefinition Height="0.8*" />
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0">
+                <StackPanel DockPanel.Dock="Left" Width="170" Margin="0,0,10,0">
+                    <TextBlock Text="Header Code:" FontWeight="Bold" TextWrapping="Wrap" />
+                    <TextBlock Text="Code in this editor is prepended to the fragment editor's text when it is parsed." Margin="0,10,0,0" TextWrapping="Wrap" />
+                </StackPanel>
+
+                <editor:SyntaxEditor x:Name="headerEditor" IsOutliningMarginVisible="False" CanSplitHorizontally="False">
+                    <editor:EditorDocument xml:space="preserve"><![CDATA[using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SyntaxEditor.CodeFragments {
+	/// <summary>A class to demonstrate fragment editing.</summary>
+	public class MyClass {
+		/// <summary>Writes the first item to the console.</summary>
+		/// <param name="list">The list to examine.</param>
+		public void WriteFirstItem(List<int> list) {
+]]></editor:EditorDocument>
+                </editor:SyntaxEditor>
+            </DockPanel>
+
+            <DockPanel Grid.Row="1" Margin="0,10,0,10">
+                <StackPanel DockPanel.Dock="Left" Width="170" Margin="0,0,10,0">
+                    <TextBlock Text="Fragment Code:" FontWeight="Bold" TextWrapping="Wrap" />
+                    <TextBlock Text="Code in this editor is what the end user would see and edit." Margin="0,10,0,0" TextWrapping="Wrap" />
+                    <TextBlock Text="Click the button below to toggle editing of the fragment and header/footer editors." Margin="0,10,0,0" TextWrapping="Wrap" />
+                    <Button Margin="0,10,0,0" Content="Toggle Edit Mode" Click="OnToggleEditModeButtonClick" />
+                </StackPanel>
+
+                <editor:SyntaxEditor x:Name="fragmentEditor" 
+                                     IsLineNumberMarginVisible="True" 
+                                     IsOutliningMarginVisible="False" 
+                                     CanSplitHorizontally="False"
+										 DocumentChanged="OnSyntaxEditorDocumentChanged"
+										 DocumentIsModifiedChanged="OnSyntaxEditorDocumentIsModifiedChanged"
+										 DocumentParseDataChanged="OnSyntaxEditorDocumentParseDataChanged"										 
+										 MacroRecordingStateChanged="OnSyntaxEditorMacroRecordingStateChanged"
+										 UserInterfaceUpdate="OnSyntaxEditorUserInterfaceUpdate"
+										 ViewIsIncrementalSearchActiveChanged="OnSyntaxEditorViewIsIncrementalSearchActiveChanged"
+										 ViewSearch="OnSyntaxEditorViewSearch"
+										 ViewSelectionChanged="OnSyntaxEditorViewSelectionChanged"
+										 ViewSplitAdded="OnSyntaxEditorViewSplitAdded"
+										 ViewSplitMoved="OnSyntaxEditorViewSplitMoved"
+										 ViewSplitRemoved="OnSyntaxEditorViewSplitRemoved"
+                                     >
+                    <editor:EditorDocument xml:space="preserve"><![CDATA[// If there is at least one item in the list...
+if (list.Count > 0) {
+	// Write it to the Console
+	var firstItem = list.FirstOrDefault();
+	Console.WriteLine(firstItem
+}
+
+// NOTE: Edit this document and see how syntax error reporting and
+//       automated IntelliPrompt features such as completion 
+//       lists, quick info, and parameter info fully work.
+
+]]></editor:EditorDocument>
+                </editor:SyntaxEditor>
+            </DockPanel>
+
+            <DockPanel Grid.Row="2">
+                <StackPanel DockPanel.Dock="Left" Width="170" Margin="0,0,10,0">
+                    <TextBlock Text="Footer Code:" FontWeight="Bold" TextWrapping="Wrap" />
+                    <TextBlock Text="Code in this editor is postpended to the fragment editor's text when it is parsed." Margin="0,10,0,0" TextWrapping="Wrap" />
+                </StackPanel>
+
+                <editor:SyntaxEditor x:Name="footerEditor" IsOutliningMarginVisible="False" CanSplitHorizontally="False">
+                    <editor:EditorDocument xml:space="preserve"><![CDATA[		}
+	}
+}]]></editor:EditorDocument>
+                </editor:SyntaxEditor>
+            </DockPanel>
+            <DockPanel Grid.Row="3">
+                <StackPanel DockPanel.Dock="Left" Width="170" Margin="0,0,10,0">
+                    <TextBlock Text="Error output:" FontWeight="Bold" TextWrapping="Wrap" />
+                    <TextBlock Text="Errors in code are reflected here." Margin="0,10,0,0" TextWrapping="Wrap" />
+                </StackPanel>
+                <ListView x:Name="errorListView" BorderThickness="0" MouseDoubleClick="OnErrorListViewDoubleClick">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Line" Width="40" DisplayMemberBinding="{Binding Path=PositionRange.StartPosition.DisplayLine}" />
+                            <GridViewColumn Header="Char" Width="40" DisplayMemberBinding="{Binding Path=PositionRange.StartPosition.DisplayCharacter}" />
+                            <GridViewColumn Header="Description" Width="300" DisplayMemberBinding="{Binding Path=Description}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>
